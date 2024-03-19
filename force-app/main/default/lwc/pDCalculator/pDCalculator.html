@@ -1,0 +1,68 @@
+<template>
+    <lightning-card  title="PD1 Calculator">
+        <!-- Process -->
+        <lightning-button variant="brand" 
+                          label="Calculate Score" 
+                          title="Calculate Score" 
+                          slot="actions" 
+                          onclick={calculateScore}
+        ></lightning-button>
+        <div class="slds-p-horizontal_small">
+        <!--Input Information-->
+            <lightning-input 
+                type="number" 
+                name="devFundamentals" 
+                label="Developer Fundamentals(23%) :" 
+                value={devFundamentalScore}
+                min = 0
+                max = 100
+                message-when-bad-input = 'The value entered must be between 0 - 100'
+                onchange={handleChange}
+            ></lightning-input><br>
+            <lightning-input 
+                type="number" 
+                name="processAutomation" 
+                label="Process Automation(30%) :" 
+                value={processAutomationScore}
+                min = 0
+                max = 100
+                message-when-bad-input = 'The value entered must be between 0 - 100'
+                onchange={handleChange}
+                ></lightning-input><br>
+            <lightning-input 
+                type="number" 
+                name="userInterface" 
+                label="User Interface(25%) :" 
+                value={userInterfaceScore}
+                min = 0
+                max = 100
+                onchange={handleChange}
+                ></lightning-input><br>
+            <lightning-input 
+                type="number" 
+                name="testDebugDeployment" 
+                label="Testing, Debugging, and Deployment (22%) :" 
+                value={testDebugDeploymentScore}
+                min = 0
+                max = 100
+                message-when-bad-input = 'The value entered must be between 0 - 100'
+                onchange={handleChange}
+                ></lightning-input><br>
+        </div>
+        <!-- Display Results -->
+        <div slot="footer">
+            <h1 class="resultText">Certification Results:</h1>
+            <p>Certification Score: <span class="scoreText">{certificationScore}%</span></p>
+            <ul class="resourceList">
+                <li>Resources: </li>
+                <li>
+                    <a href="https://trailhead.salesforce.com/en/credentials/platformdeveloperi">PD1 Exam Guide</a>
+                </li>
+                <li>
+                    <a href="https://focusonforce.com/courses/salesforce-certified-platform-developer-1-exams">Focus on Force Exams</a>
+                </li>
+
+            </ul>
+        </div>
+    </lightning-card>
+</template>
