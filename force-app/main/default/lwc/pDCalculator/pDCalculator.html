@@ -14,6 +14,9 @@
                 name="devFundamentals" 
                 label="Developer Fundamentals(23%) :" 
                 value={devFundamentalScore}
+                min = 0
+                max = 100
+                message-when-bad-input = 'The value entered must be between 0 - 100'
                 onchange={handleChange}
             ></lightning-input><br>
             <lightning-input 
@@ -21,6 +24,9 @@
                 name="processAutomation" 
                 label="Process Automation(30%) :" 
                 value={processAutomationScore}
+                min = 0
+                max = 100
+                message-when-bad-input = 'The value entered must be between 0 - 100'
                 onchange={handleChange}
                 ></lightning-input><br>
             <lightning-input 
@@ -35,6 +41,9 @@
                 name="testDebugDeployment" 
                 label="Testing, Debugging, and Deployment (22%) :" 
                 value={testDebugDeploymentScore}
+                min = 0
+                max = 100
+                message-when-bad-input = 'The value entered must be between 0 - 100'
                 onchange={handleChange}
                 ></lightning-input><br>
         </div>
